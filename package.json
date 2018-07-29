@@ -1,19 +1,30 @@
 {
-  "name": "simple_reddit",
-  "version": "1.0.0",
-  "description": "\"# simple-reddit\"",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Cellv2/simple-reddit.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Cellv2/simple-reddit/issues"
-  },
-  "homepage": "https://github.com/Cellv2/simple-reddit#readme"
+    "name": "simple_reddit",
+    "version": "1.0.0",
+    "description": "\"# simple-reddit\"",
+    "main": "app.js",
+    "scripts": {
+        "start": "npm run nodemon",
+        "nodemon": "nodemon app.js -e js,ejs",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Cellv2/simple-reddit.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Cellv2/simple-reddit/issues"
+    },
+    "homepage": "https://github.com/Cellv2/simple-reddit#readme",
+    "dependencies": {
+        "ejs": "^2.6.1",
+        "express": "^4.16.3",
+        "mongoose": "^5.2.5"
+    },
+    "devDependencies": {
+        "chalk": "^2.4.1",
+        "nodemon": "^1.18.3"
+    }
 }
