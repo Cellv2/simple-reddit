@@ -22,31 +22,28 @@ function connectDatabase() {
                 throw err;
             } else {
                 log(chalk.blue("Database successfully connected"));
-                // console.log()
             }
         }
     );
 }
 connectDatabase();
 
-
 // ? This is just a test
-const TestModel = require("./models/test");
-let oneTwoThree = new TestModel({
-    name: "QWERTY",
-    age: 123456,
-    number: "Over9000"
-});
+// const TestModel = require("./models/test");
+// let oneTwoThree = new TestModel({
+//     name: "QWERTY",
+//     age: 123456,
+//     number: "Over9000"
+// });
 
-oneTwoThree.save(function(err, test) {
-    if (err) {
-        log(chalk.red("Something went wrong"));
-    } else {
-        log(chalk.green(test));
-    }
-});
+// oneTwoThree.save(function(err, test) {
+//     if (err) {
+//         log(chalk.red("Something went wrong"));
+//     } else {
+//         log(chalk.green(test));
+//     }
+// });
 // ? End of test
-
 
 //route imports
 const subredditRoutes = require("./routes/subreddits.js");
