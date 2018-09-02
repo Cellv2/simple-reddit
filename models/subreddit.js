@@ -9,13 +9,19 @@ const subredditSchema = new mongoose.Schema({
             ref: "Post"
         }
     ],
-    owners: [
+    owner: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        username: String
+    },
+    admins: [
         {
             id: {
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "User"
-            },
-            username: String
+            }
         }
     ]
 });
