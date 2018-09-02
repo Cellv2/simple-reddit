@@ -1,7 +1,9 @@
 <% include ../layouts/header.ejs %>
 
 <form action="/subreddits" method="POST">
-    <input type="text" name="subredditName" placeholder="Make a new subreddit!">
+    <input type="text" name="subreddit[name]" placeholder="Make a new subreddit!">
+    <input type="text" name="subreddit[description]" placeholder="Give it a description!">
+    <button type="submit">Create</button>
 </form>
 
 <% include ../layouts/footer.ejs %>
