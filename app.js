@@ -72,40 +72,8 @@ app.get("/", function(req, res) {
     res.render("landing");
 });
 
-// ====
-// subreddits
-// ====
-
-//INDEX
-app.get("/subreddits", function(req, res) {
-    // res.send("sub landing page");
-    res.render("subreddits/index");
-});
-
-//NEW
-app.get("/subreddits/new", function(req, res) {
-    res.render("subreddits/new");
-});
-
-
-//TODO: Implement user ID into subreddit create as the owner
-
-//CREATE
-app.post("/subreddits", function(req, res) {
-    const subredditObj = req.body.subreddit;
-    subreddit.create({
-        name: subredditObj.name,
-        description: subredditObj.description
-    }, function(err, subreddit) {
-        if (err) {
-            log(err)
-        } else {
-            log(subreddit);
-            res.redirect("/");
-        }
-    })
-    // res.send("create route");
-});
+//route config
+app.use("/subreddit", subredditRoutes);
 
 //set up express listener
 app.listen(port, "localhost", function(err) {
