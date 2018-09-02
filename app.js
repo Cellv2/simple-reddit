@@ -45,13 +45,18 @@ connectDatabase();
 // });
 // ? End of test
 
+//model imports
+const subreddit = require("./models/subreddit");
+
 //route imports
 const subredditRoutes = require("./routes/subreddits.js");
 
 //app config
 const app = express();
+const bodyParser = require("body-parser");
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 //INDEX
 //NEW
@@ -82,9 +87,24 @@ app.get("/subreddits/new", function(req, res) {
     res.render("subreddits/new");
 });
 
+
+//TODO: Implement user ID into subreddit create as the owner
+
 //CREATE
 app.post("/subreddits", function(req, res) {
-    res.send("create route");
+    const subredditObj = req.body.subreddit;
+    subreddit.create({
+        name: subredditObj.name,
+        description: subredditObj.description
+    }, function(err, subreddit) {
+        if (err) {
+            log(err)
+        } else {
+            log(subreddit);
+            res.redirect("/");
+        }
+    })
+    // res.send("create route");
 });
 
 //set up express listener
