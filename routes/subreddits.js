@@ -8,7 +8,7 @@ const log = console.log;
 
 //INDEX
 router.get("/", function(req, res) {
-    res.render("subreddits/index");
+    res.render("subreddits/show");
 });
 
 //NEW
