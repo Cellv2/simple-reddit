@@ -49,14 +49,15 @@ connectDatabase();
 //const subreddit = require("./models/subreddit");
 
 //route imports
-const subredditRoutes = require("./routes/subreddits.js");
+const subredditRoutes = require("./routes/subreddits");
+const postRoutes = require("./routes/posts");
 
 //app config
 const app = express();
 const bodyParser = require("body-parser");
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //INDEX
 //NEW
@@ -74,6 +75,7 @@ app.get("/", function(req, res) {
 
 //route config
 app.use("/subreddit", subredditRoutes);
+app.use("/subreddit/:id/post", postRoutes);
 
 //set up express listener
 app.listen(port, "localhost", function(err) {
