@@ -1,14 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const subreddit = require("../models/subreddit");
+const Subreddit = require("../models/subreddit");
 
 //dev utils
 const chalk = require("chalk");
 const log = console.log;
 
+//TODO: Redirect requests to the subreddit root (/subreddits/) to the home page - there should be no single place for all subreddits to show
 //INDEX
 router.get("/", function(req, res) {
-    res.render("subreddits/show");
+    // res.render("subreddits/show");
+    res.send("Index page, to be removed");
 });
 
 //NEW
@@ -21,7 +23,7 @@ router.get("/new", function(req, res) {
 //CREATE
 router.post("/", function(req, res) {
     const subredditObj = req.body.subreddit;
-    subreddit.create(
+    Subreddit.create(
         {
             name: subredditObj.name,
             description: subredditObj.description
@@ -35,6 +37,19 @@ router.post("/", function(req, res) {
             }
         }
     );
+});
+
+//TODO: Make the GET use the subreddit name, and ensure that new subreddits have a unique name
+//SHOW
+router.get("/:id", function(req, res) {
+    Subreddit.findById(req.params.id, function(err, subreddit) {
+        if (err) {
+            log(chalk.red("Something wrong - ", err));
+        } else {
+            // res.send("Found " + foundSubreddit);
+            res.render("subreddits/show", { subreddit: subreddit });
+        }
+    });
 });
 
 //register route
