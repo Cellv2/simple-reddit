@@ -46,7 +46,7 @@ connectDatabase();
 // ? End of test
 
 //model imports
-const subreddit = require("./models/subreddit");
+//const subreddit = require("./models/subreddit");
 
 //route imports
 const subredditRoutes = require("./routes/subreddits.js");
