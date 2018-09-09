@@ -7,6 +7,18 @@ const Post = require("../models/post");
 const chalk = require("chalk");
 const log = console.log;
 
+//TODO: Change subreddit ID to name
+//NEW
+router.get("/new", function(req, res) {
+    Subreddit.findById(req.params.id, function(err, subreddit) {
+        if (err) {
+            log(err);
+        } else {
+            res.render("posts/new", { subreddit: subreddit });
+        }
+    });
+});
+
 //TODO: Sanitise post input
 //SHOW
 router.get("/:post_id", function(req, res) {
@@ -18,24 +30,12 @@ router.get("/:post_id", function(req, res) {
                 if (err) {
                     log(err);
                 } else {
-                    // res.send("This is the post page for " + post);
-                    res.render("posts/show", { subreddit: subreddit, post: post });
+                    res.render("posts/show", {
+                        subreddit: subreddit,
+                        post: post
+                    });
                 }
             });
-        }
-    });
-});
-
-//TODO: Change subreddit ID to name
-//NEW
-router.get("/new", function(req, res) {
-    Subreddit.findById(req.params.id, function(err, subreddit) {
-        if (err) {
-            log(err);
-        } else {
-            // res.send("new post route");
-            // console.log(subreddit);
-            res.render("posts/new", { subreddit: subreddit });
         }
     });
 });
@@ -57,10 +57,10 @@ router.post("/", function(req, res) {
                     subreddit.posts.push(post);
                     subreddit.save();
                     //redirect to show the newly created post
-                    // res.redirect(
-                    //     "/subreddit/" + subreddit._id + "/post" + post._id
-                    // );
-                    res.send("post created");
+                    res.redirect(
+                        "/subreddit/" + subreddit._id + "/post/" + post._id
+                    );
+                    // res.send("post created");
                 }
             });
         }
