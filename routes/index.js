@@ -8,8 +8,8 @@ const log = console.log;
 
 //TODO: Remove the list of subreddits? Not sure
 //INDEX
-router.get("/", function(req, res) {
-    Subreddit.find({}, function(err, subreddits) {
+router.get("/", (req, res) => {
+    Subreddit.find({}, (err, subreddits) => {
         if (err) {
             log(chalk.red(err));
         } else {

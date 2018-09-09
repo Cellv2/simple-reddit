@@ -9,8 +9,8 @@ const log = console.log;
 
 //TODO: Change subreddit ID to name
 //NEW
-router.get("/new", function(req, res) {
-    Subreddit.findById(req.params.id, function(err, subreddit) {
+router.get("/new", (req, res) => {
+    Subreddit.findById(req.params.id, (err, subreddit) => {
         if (err) {
             log(err);
         } else {
@@ -21,12 +21,12 @@ router.get("/new", function(req, res) {
 
 //TODO: Sanitise post input
 //SHOW
-router.get("/:post_id", function(req, res) {
-    Subreddit.findById(req.params.id, function(err, subreddit) {
+router.get("/:post_id", (req, res) => {
+    Subreddit.findById(req.params.id, (err, subreddit) => {
         if (err) {
             log(err);
         } else {
-            Post.findById(req.params.post_id, function(err, post) {
+            Post.findById(req.params.post_id, (err, post) => {
                 if (err) {
                     log(err);
                 } else {
@@ -41,12 +41,12 @@ router.get("/:post_id", function(req, res) {
 });
 
 //CREATE
-router.post("/", function(req, res) {
-    Subreddit.findById(req.params.id, function(err, subreddit) {
+router.post("/", (req, res) => {
+    Subreddit.findById(req.params.id, (err, subreddit) => {
         if (err) {
             log(err);
         } else {
-            Post.create(req.body.post, function(err, post) {
+            Post.create(req.body.post, (err, post) => {
                 if (err) {
                     log(err);
                 } else {

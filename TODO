@@ -2,7 +2,7 @@
 
 Back:
     General:
-        ☐ @low Update all functions with arrow functions @15m
+        ✔ @low Update all functions with arrow functions (and test!) @15m @started(18-09-09 20:06) @done(18-09-09 20:10) @lasted(4m22s)
         ☐ @low Update all DB calls with async functions @1h
         App.js:
             ☐ @low Find best way to split out the database connection into its own file @30m

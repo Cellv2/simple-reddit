@@ -71,7 +71,7 @@ app.use("/subreddit", subredditRoutes);
 app.use("/subreddit/:id/post", postRoutes);
 
 //set up express listener
-app.listen(port, "localhost", function(err) {
+app.listen(port, "localhost", err => {
     if (err) {
         chalk.red(console.log("Things gone real bad, help"));
     }
