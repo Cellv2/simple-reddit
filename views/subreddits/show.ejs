@@ -2,7 +2,14 @@
 
 <a href="/">Go to home page</a>
 <h1>This is the show page for <%= subreddit.name %></h1>
-<h2>This is a list of posts on this subreddit:</h2>
 <a href="/subreddit/<%=subreddit.id %>/post/new">Create a new post</a>
+<h2>This is a list of posts on this subreddit:</h2>
+<ul>
+    <% subreddit.posts.forEach(function(post) { %>
+    <li>
+        <a href="/subreddit/<%= subreddit.id %>/post/<%= post._id %>"><%= post.title %></a>
+    </li>
+    <% }); %>
+</ul>
 
 <% include ../layouts/footer.ejs %>

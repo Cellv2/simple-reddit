@@ -7,6 +7,7 @@ const Post = require("../models/post");
 const chalk = require("chalk");
 const log = console.log;
 
+//TODO: Sanitise post input
 //SHOW
 router.get("/:post_id", function(req, res) {
     Subreddit.findById(req.params.id, function(err, subreddit) {
@@ -17,7 +18,8 @@ router.get("/:post_id", function(req, res) {
                 if (err) {
                     log(err);
                 } else {
-                    res.send("This is the post page for " + post);
+                    // res.send("This is the post page for " + post);
+                    res.render("posts/show", { subreddit: subreddit, post: post });
                 }
             });
         }
@@ -64,8 +66,5 @@ router.post("/", function(req, res) {
         }
     });
 });
-
-//SHOW
-router.get("/:post_id", function(req, res) {});
 
 module.exports = router;

@@ -42,11 +42,10 @@ router.post("/", function(req, res) {
 //TODO: Make the GET use the subreddit name, and ensure that new subreddits have a unique name
 //SHOW
 router.get("/:id", function(req, res) {
-    Subreddit.findById(req.params.id, function(err, subreddit) {
+    Subreddit.findById(req.params.id).populate("posts").exec(function(err, subreddit) {
         if (err) {
             log(chalk.red("Something wrong - ", err));
         } else {
-            // res.send("Found " + foundSubreddit);
             res.render("subreddits/show", { subreddit: subreddit });
         }
     });
