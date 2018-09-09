@@ -18,4 +18,24 @@ router.get("/", function(req, res) {
     });
 });
 
+//register
+router.get("/register", (req, res) => {
+    res.send("register route");
+});
+
+//register POST
+router.post("/register", (req, res) => {
+    res.send("register POST route");
+});
+
+//login
+router.get("/login", (req, res) => {
+    res.send("login route");
+});
+
+//logout
+router.get("/logout", (req, res) => {
+    res.send("logout route");
+});
+
 module.exports = router;
