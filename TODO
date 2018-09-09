@@ -12,8 +12,24 @@ Back:
             ☐ Add ability to actually create users (make sure each user is unique) @45m
             ☐ Add authentication @45m
             ☐ Add authorisation @1h
+                ☐ Only users can update/delete their own comments/posts (in most cases, admins can too to some degree)
+            ☐ Add ability to delete users
+                ☐ Think about how this will interact with existing comments, don't want the username to stay attached to it
         Comments: 
-            ☐ Add ability to create posts under a post @1h
+            ☐ Add ability to create comments under a post @1h
+            ☐ Add ability to have a comment applied to a comment
+            ☐ Add rating for a comment (one user can only upvote or downvote once)
+            ☐ Add ability to delete comments
+                ☐ Think about how comments posted against comments will work if deleted
+        Posts:
+            ☐ Add ability to delete posts
+            ☐ Add rating for a post (one user can only upvote or downvote once)
+        Subreddits:
+            ☐ Add ability to delete subreddits
+            ☐ Only owners can set admins
+            ☐ Admins can update or delete posts or comments in THAT subreddit only
+                ☐ Make it so if you're an admin, you can see the original post/comment?
+            ☐ Transfer owner rights?
 
 Front:
     Styling:
