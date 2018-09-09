@@ -1,0 +1,19 @@
+//https://github.com/fabiospampinato/vscode-todo-plus
+
+Back:
+    General:
+        ☐ @low Update all functions with arrow functions @15m
+        ☐ @low Update all DB calls with async functions @1h
+        App.js:
+            ☐ @low Find best way to split out the database connection into its own file @30m
+
+    Functionality:
+        Users:
+            ☐ Add ability to actually create users (make sure each user is unique) @45m
+            ☐ Add authentication @45m
+            ☐ Add authorisation @1h
+
+Front:
+    Styling:
+        ☐ Haha what styling, no really I need to do styling
+            ☐ Decide on what framework to use (give semantic a try?)
