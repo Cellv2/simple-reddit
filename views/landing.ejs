@@ -6,4 +6,13 @@ landing page ok thanks
 <br>
 <a href="/subreddit/new">Make a new subreddit</a>
 
+<h2>This is a list of all subreddits </h2>
+<ul>
+    <% subreddits.forEach(function(subreddit) { %>
+    <li>
+        <a href="/subreddit/<%= subreddit.id %>"><%= subreddit.name %></a>
+    </li>
+    <% }); %>
+</ul>
+
 <% include layouts/footer.ejs %>

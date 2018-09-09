@@ -45,10 +45,8 @@ connectDatabase();
 // });
 // ? End of test
 
-//model imports
-//const subreddit = require("./models/subreddit");
-
 //route imports
+const indexRoutes = require("./routes/index");
 const subredditRoutes = require("./routes/subreddits");
 const postRoutes = require("./routes/posts");
 
@@ -67,13 +65,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //UPDATE
 //DESTROY
 
-//INDEX
-app.get("/", function(req, res) {
-    // res.send("hi!!");
-    res.render("landing");
-});
-
 //route config
+app.use("/", indexRoutes);
 app.use("/subreddit", subredditRoutes);
 app.use("/subreddit/:id/post", postRoutes);
 
