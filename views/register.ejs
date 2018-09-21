@@ -1,0 +1,12 @@
+<% include ./layouts/header.ejs %>
+
+<a href="/">Go to home page</a>
+<h1>REGISTER: This is the new user page</h1>
+<form action="/" method="POST">
+    <input type="text" name="user[username]" placeholder="Please enter a username">
+    <input type="email" name="user[email]" placeholder="Please enter an email address">
+    <input type="password" name="user[password]" placeholder="Please enter a password">
+    <button type="submit">Create</button>
+</form>
+
+<% include ./layouts/footer.ejs %>

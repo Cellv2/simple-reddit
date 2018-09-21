@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Subreddit = require("../models/subreddit");
+const User = require("../models/user");
 
 //dev utils
 const chalk = require("chalk");
@@ -20,12 +21,27 @@ router.get("/", (req, res) => {
 
 //register
 router.get("/register", (req, res) => {
-    res.send("register route");
+    res.render("register");
 });
 
 //register POST
-router.post("/register", (req, res) => {
-    res.send("register POST route");
+router.post("/", (req, res) => {
+    const userObj = req.body.user;
+    User.create(
+        {
+            username: userObj.username,
+            email: userObj.email,
+            password: userObj.password
+        },
+        (err, user) => {
+            if (err) {
+                log(err);
+            } else {
+                log(user);
+                res.redirect("/");
+            }
+        }
+    );
 });
 
 //login
