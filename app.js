@@ -49,6 +49,7 @@ connectDatabase();
 const indexRoutes = require("./routes/index");
 const subredditRoutes = require("./routes/subreddits");
 const postRoutes = require("./routes/posts");
+const userRoutes = require("./routes/users");
 
 //app config
 const app = express();
@@ -69,6 +70,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", indexRoutes);
 app.use("/subreddit", subredditRoutes);
 app.use("/subreddit/:id/post", postRoutes);
+app.use("/user", userRoutes);
 
 //set up express listener
 app.listen(port, "localhost", err => {
