@@ -1,0 +1,12 @@
+<% include ../layouts/header.ejs %>
+
+<a href="/">Back to home page</a>
+
+<h1>User information for: <%= user.username %></h1>
+<ul>
+    <li>email: <%= user.email %></li>
+    <li>password (kek): <%= user.password %></li>
+</ul>
+
+
+<% include ../layouts/footer.ejs %>
