@@ -9,7 +9,12 @@ Back:
 
     Functionality:
         Users:
-            ☐ Add ability to actually create users (make sure each user is unique) @45m
+            ✔ Add ability to actually create users @30m @started(18-09-21 20:24) @done(18-09-21 20:51) @lasted(27m58s)
+                ☐ Make sure each user is unique @45m
+                ☐ Ensure that the user passwords are secure in the DB (passport) @45m
+            ✔ Allow users to see their information @10m @started(18-09-21 20:54) @done(18-09-21 21:01) @lasted(7m58s)
+            ☐ Allow users to edit their information @15m
+            ☐ Update URL to show the username rather than ID
             ☐ Add authentication @45m
             ☐ Add authorisation @1h
                 ☐ Only users can update/delete their own comments/posts (in most cases, admins can too to some degree)
@@ -21,15 +26,19 @@ Back:
             ☐ Add rating for a comment (one user can only upvote or downvote once)
             ☐ Add ability to delete comments
                 ☐ Think about how comments posted against comments will work if deleted
+            ☐ @low Add ability to share comments directly
         Posts:
             ☐ Add ability to delete posts
             ☐ Add rating for a post (one user can only upvote or downvote once)
+            ☐ Update URL to show truncated post name rather than ID
         Subreddits:
             ☐ Add ability to delete subreddits
             ☐ Only owners can set admins
             ☐ Admins can update or delete posts or comments in THAT subreddit only
                 ☐ Make it so if you're an admin, you can see the original post/comment?
             ☐ Transfer owner rights?
+            ☐ Update URL to show subreddit name only
+            ☐ Restrict subreddit name length?
 
 Front:
     Styling:
